@@ -1,9 +1,6 @@
 N = 4
 
 def prefersCurrentPartner(preferences, woman, current_man, new_man):
-    """
-    Проверяет, предпочитает ли женщина своего текущего партнёра новому мужчине.
-    """
     for preference in preferences[woman]:
         if preference == current_man:
             return True
@@ -12,9 +9,7 @@ def prefersCurrentPartner(preferences, woman, current_man, new_man):
     return False
 
 def findStablePairs(preferences):
-    """
-    Алгоритм для нахождения стабильных паросочетаний.
-    """
+  
     engagements = [-1] * N  # Список пар, где индекс — женщина, значение — мужчина
     free_men = list(range(N))  # Список свободных мужчин
 
@@ -32,7 +27,6 @@ def findStablePairs(preferences):
                     free_men.append(current_partner)
                     break
 
-    # Печать результатов
     print("Женщина", "Мужчина")
     for woman, man in enumerate(engagements):
         print(woman + N, "\t", man)
